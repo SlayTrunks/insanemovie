@@ -50,7 +50,7 @@ const Page = ({params}) => {
           <div key={item.id} className='flex bg-[#0a1929] justify-start rounded-xl mt-3 '>
            <img src={`https://image.tmdb.org/t/p/original${item.poster_path}`} className='locandina h-20 w-20' alt="" />
             <Link 
-            href={`/detalls/${item.id}`}
+            href={`/details/${item.id}`}
           key={item.id}
           className='h-10 w-full mt-2 rounded-xl  normaltext1 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none'
         >
