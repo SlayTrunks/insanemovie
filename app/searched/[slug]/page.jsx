@@ -44,7 +44,7 @@ const Page = ({params}) => {
     </div>
     <div className="movie_desc">
       <p className="text">
-        {item.overview?.slice(0,200)}...<Link className='text-blue-800' href={item.media_type == 'tv' ? `/tv/${item.id}` : `/detail/${item.id}`}>see more</Link>
+        {item.overview?.slice(0,200)}...<Link className='text-blue-800' href={item.media_type == 'tv' ? `/tv/${item.id}` : `/details/${item.id}`}>see more</Link>
       </p>
     </div>
    
