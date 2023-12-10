@@ -1,0 +1,697 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.back{
+  background-color: #0a1929;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #0a1929;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #0a1929;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+.checkbox {
+  width: 223px;
+  height: 60px;
+  background-color: #d0d0d0;
+  border-radius: 30px;
+  position: relative;
+  color: black;
+  overflow: hidden;
+}
+
+#checkbox_toggle {
+  display: none;
+}
+
+.checkbox .toggle {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  border-radius: 30px;
+  left: 5px;
+  cursor: pointer;
+  background: linear-gradient(40deg, #FF0080,#FF8C00 70%);
+  transition: 0.4s;
+  box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
+}
+
+.checkbox .slide {
+  width: 230px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.checkbox .slide .text {
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.check:checked + .checkbox .slide .toggle {
+  transform: translateX(113px);
+  background: linear-gradient(40deg, #FF0080,#FF8C00 70%);
+  box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
+  /* box-shadow: -0px -0px 10px #8983F7, -0px -0px 3px #8983F7; */
+}
+.normaltext {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(40deg, #FF0080, #FF8C00 70%);
+  /* background-image: linear-gradient(40deg, #8983F7, #A3DAFB 70%); */
+font-family: Georgia, 'Times New Roman', Times, serif
+}
+.normaltext1{
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+.line{
+  background : linear-gradient(-40deg, #700e3f, #442d12 70%);
+}
+
+.check:checked + .checkbox .slide {
+  background-color: #0a1929;
+  color: #fff;
+}
+
+/* loading  */
+
+
+.pl,
+.pl__worm {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.pl {
+  animation-name: bump9;
+  animation-timing-function: linear;
+  width: 8em;
+  height: 8em;
+}
+
+.pl__ring {
+  stroke: hsla(var(--hue),10%,10%,0.1);
+  transition: stroke 0.3s;
+}
+
+.pl__worm {
+  animation-name: worm9;
+  animation-timing-function: cubic-bezier(0.42,0.17,0.75,0.83);
+}
+
+/* Animations */
+@keyframes bump9 {
+  from,
+  42%,
+  46%,
+  51%,
+  55%,
+  59%,
+  63%,
+  67%,
+  71%,
+  74%,
+  78%,
+  81%,
+  85%,
+  88%,
+  92%,
+  to {
+    transform: translate(0,0);
+  }
+
+  44% {
+    transform: translate(1.33%,6.75%);
+  }
+
+  53% {
+    transform: translate(-16.67%,-0.54%);
+  }
+
+  61% {
+    transform: translate(3.66%,-2.46%);
+  }
+
+  69% {
+    transform: translate(-0.59%,15.27%);
+  }
+
+  76% {
+    transform: translate(-1.92%,-4.68%);
+  }
+
+  83% {
+    transform: translate(9.38%,0.96%);
+  }
+
+  90% {
+    transform: translate(-4.55%,1.98%);
+  }
+}
+
+@keyframes worm9 {
+  from {
+    stroke-dashoffset: 10;
+  }
+
+  25% {
+    stroke-dashoffset: 295;
+  }
+
+  to {
+    stroke-dashoffset: 1165;
+  }
+}
+
+
+/* movie details  */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+.movie-card {
+  font: 14px/22px "Lato", Arial, sans-serif;
+  color: #A9A8A3;
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 780px;
+  height: 640px;
+  background: #0a1929;
+  border-radius: 5px;
+  position: relative;
+}
+
+.hero {
+  height: 342px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.hero:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: red;
+  
+  z-index: -1;
+
+  transform: skewY(-2.2deg);
+  transform-origin: 0 0;
+
+  /*chrome antialias fix*/
+  -webkit-backface-visibility: hidden;
+}
+
+.cover {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+  z-index: 2;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.details {
+  padding: 190px 0 0 280px;
+}
+
+.title1 {
+  
+  font-size: 44px;
+  margin-bottom: 13px;
+  /* position: relative; */
+  z-index: 10;
+}
+
+.title1 span {
+  position: absolute;
+  top: 3px;
+  margin-left: 12px;
+  background: #C4AF3D;
+  border-radius: 5px;
+  color: #544C21;
+  font-size: 14px;
+  padding: 0px 4px;
+  z-index: 19;
+}
+
+.title2 {
+ 
+  font-size: 23px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  z-index: 10;
+}
+
+.likes {
+  margin-left: 24px;
+}
+
+.likes:before {
+  content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/icon_like.png");
+  position: relative;
+  top: 2px;
+  padding-right: 7px;
+}
+
+.description {
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B1B0AC;
+  background-color: #0a1929;
+}
+
+.column1 {
+  padding-left: 50px;
+  padding-top: 120px;
+  width: 220px;
+  float: left;
+  text-align: center;
+}
+
+.tag {
+  background: #0a1929;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+
+
+.column2 {
+  padding-left: 41px;
+  padding-top: 10px;
+  margin-left: 20px;
+  width: 480px;
+  float: left;
+}
+
+.avatars {
+  margin-top: 23px;
+}
+
+.avatars img {
+  cursor: pointer;
+  
+}
+
+.avatars img:hover {
+  opacity: 0.6;
+}
+
+
+
+/*star rating stuff via: https://codepen.io/jamesbarnett/pen/vlpkh/*/
+
+fieldset,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style Star Rating Widget */
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label:before {
+  margin: 5px;
+  margin-top: 0;
+  font-size: 1em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/* CSS Magic to Highlight Stars on Hover */
+
+.rating > input:checked ~ label,
+/* show gold star when clicked */
+.rating:not(:checked) > label:hover,
+/* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+/* hover previous stars in list */
+.rating > input:checked + label:hover,
+/* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+/* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}
+
+/* tooltip stuff via: https://codepen.io/peiche/pen/JaftA */
+
+a[data-tooltip] {
+  position: relative;
+}
+
+a[data-tooltip]::before,
+a[data-tooltip]::after {
+  position: absolute;
+  display: none;
+  opacity: 0.85;
+}
+
+a[data-tooltip]::before {
+  content: attr(data-tooltip);
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+a[data-tooltip]::after {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  content: '';
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {
+  display: block;
+}
+
+/** positioning **/
+
+/* top tooltip */
+a[data-tooltip][data-placement="top"]::before {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 40px;
+}
+a[data-tooltip][data-placement="top"]::after {
+  border-top-color: #000;
+  border-bottom: none;
+  bottom: 50px;
+  left: 20px;
+  margin-bottom: 4px;
+}
+
+/* searched  */
+
+html, body {
+  background: black;
+}
+
+.movie_card {
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 350px;
+  margin: 100px auto; 
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.movie_card:hover {
+  transform: scale(1.02);
+  transition: all 0.4s;
+}
+
+.movie_card .info_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: multiply;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.movie_card .info_section .movie_header {
+  position: relative;
+  padding: 25px;
+  height: 40%;
+}
+
+.movie_card .info_section .movie_header h1 {
+  color: #fff;
+  font-weight: 400;
+}
+
+.movie_card .info_section .movie_header h4 {
+  color: #9ac7fa;
+  font-weight: 400;
+}
+
+.movie_card .info_section .movie_header .minutes {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.13);
+}
+
+.movie_card .info_section .movie_header .type {
+  display: inline-block;
+  color: #cee4fd;
+  margin-left: 10px;
+}
+
+.movie_card .info_section .movie_header .locandina {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  height: 120px;
+  box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+}
+
+.movie_card .info_section .movie_desc {
+  padding: 25px;
+  height: 50%;
+}
+
+.movie_card .info_section .movie_desc .text {
+  color: #cfd6e1;
+}
+
+.movie_card .info_section .movie_social {
+  height: 10%;
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+.movie_card .info_section .movie_social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.movie_card .info_section .movie_social ul li {
+  display: inline-block;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.3s;
+  transition-delay: 0.15s;
+  margin: 0 10px;
+}
+
+.movie_card .info_section .movie_social ul li:hover {
+  transition: color 0.3s;
+  color: rgba(255,255,255,0.8);
+}
+
+.movie_card .info_section .movie_social ul li i {
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.movie_card .blur_back {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  right: 0;
+  background-size: cover;
+  border-radius: 11px;
+}
+
+@media screen and (min-width: 768px) {
+  .movie_card .movie_header {
+    width: 60%;
+  }
+
+  .movie_card .movie_desc {
+    width: 50%;
+  }
+
+  .movie_card .info_section {
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  }
+
+  .movie_card .blur_back {
+    width: 80%;
+    background-position: -100% 10% !important;  
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie_card {
+    width: 95%;
+    margin: 70px auto; 
+    min-height: 350px;
+    height: auto;
+  }
+
+  .movie_card .blur_back {
+    width: 100%;
+    background-position: 50% 50% !important;  
+  }
+
+  .movie_card .movie_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+
+  .movie_card .movie_desc {
+    width: 100%;
+  }
+
+  .movie_card .info_section {
+    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    display: inline-grid;
+  }
+}
+
+#bright {
+  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+}
+
+#bright:hover {
+  box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
+}
+
+.bright_back {
+  background: url("https://occ-0-2433-448.1.nflxso.net/art/cd5c9/3e192edf2027c536e25bb5d3b6ac93ced77cd5c9.jpg");
+}
+
+#tomb {
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+}
+
+#tomb:hover {
+  box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+}
+
+.tomb_back {
+  background: url("https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png");
+}
+
+#ave {
+  box-shadow: 0px 0px 150px -45px rgba(199,147,75, 0.7);
+  margin-bottom: 200px;
+}
+
+#ave:hover {
+  box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+}
+
+.ave_back {
+  background: url("https://www.gannett-cdn.com/-mm-/c03fd140debe8ad4c05cf81a5cad7ad61a12ce52/c=0-1580-2985-3266&r=x803&c=1600x800/local/-/media/2017/06/09/USATODAY/USATODAY/636326272873599176-Black-Panther-Teaser.jpg");
+}
