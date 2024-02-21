@@ -35,6 +35,7 @@ const Page = ({params}) => {
         fetchData();
         
       }, [params.slug]);
+      console.log(details);
   return (
     <div>{ loading ? <Loading/> : <div className="movie-card overflow-x-hidden">
   
