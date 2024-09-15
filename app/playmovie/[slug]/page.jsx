@@ -38,7 +38,7 @@ const Page = ({ params }) => {
       <div className='h-screen w-screen flex '>
         <div>
           <iframe
-            src={`https://vidsrc.to/embed/movie/${params.slug}`}
+            src={`https://vidsrc.xyz/embed/movie/${params.slug}`}
             className="h-[62vh] w-[50vw] relative top-20 ml-14 overflow-hidden max-md:w-[80vw] max-sm:w-[80vw] max-lg:w-[80vw]"
             height="auto"
             allowFullScreen

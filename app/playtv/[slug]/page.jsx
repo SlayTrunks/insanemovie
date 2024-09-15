@@ -65,7 +65,7 @@ const Page = ({ params }) => {
       <Navbar />
       <div className='flex'>
         <iframe
-          src={`https://vidsrc.to/embed/tv/${params.slug}`}
+          src={`https://vidsrc.xyz/embed/tv/${params.slug}`}
           className="h-[62vh] w-[50vw] ml-24 absolute top-20 overflow-hidden"
           height="auto"
           allowFullScreen
