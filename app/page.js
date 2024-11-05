@@ -55,14 +55,14 @@ export default function Home() {
         setArtist(data.results)
         setLoading(false)
        
-        
+     
       } catch (error) {
         console.error('Error fetching data:', error.message);
       }
     };
   
     fetchData();
-    
+    // console.log(artist)
   }, [artist]);
   
   const handleClick = ()=>{
@@ -112,11 +112,11 @@ export default function Home() {
           <Image className='rotate-2 rounded-3xl'   width={50} height={50}  src={`https://image.tmdb.org/t/p/original${item.profile_path}`} alt='' />
           <div className='pl-3'>
           <p  className=' my-2 w-full py-2px-4 normaltext1 ' key={item.id}>{index+1}.  {item.name} ({item.known_for_department})</p>
-           <div className='flex items-center gap-3 text-sm justify-center normaltext1 '>
-            {item.known_for.slice(0,2).map((p , i)=>(
-              <p key={p.title}>{i+1}.  { p.title } </p>
-            ))}
-           </div>
+          
+            
+              <p className=' normaltext1'>{item.known_for_department} </p>
+            
+         
           </div>
          </div>
         ))}
